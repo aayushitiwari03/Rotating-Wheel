@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wheel-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.wheel:hover {
+    animation: spin 4s linear forwards;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: 0.1ms;
+}
+
+.slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+}
+
+.red { background-color: red; transform: rotate(0deg); }
+.green { background-color: green; transform: rotate(90deg); }
+.yellow { background-color: yellow; transform: rotate(180deg); }
+.blue { background-color: blue; transform: rotate(270deg); }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
